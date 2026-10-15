@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Суммативное оценивание по информатике — 7 класс</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      color: #1c1e21;
+    }
+    .quiz-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #1a73e8;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #5f6368;
+      font-size: 16px;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .info-block {
+      background-color: #e8f0fe;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      border-left: 4px solid #1a73e8;
+    }
+    .info-block label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .info-block input {
+      width: 96%;
+      padding: 10px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .question {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+    }
+    .question p {
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #202124;
+    }
+    .options label {
+      display: block;
+      padding: 8px 12px;
+      margin: 6px 0;
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .options label:hover {
+      background-color: #f1f3f4;
+    }
+    .options input[type="radio"], 
+    .options input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .text-input {
+      width: 95%;
+      padding: 8px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #1557b0;
+    }
+    #result {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      display: none;
+    }
+    .res-good {
+      background-color: #e6f4ea;
+      color: #137333;
+      border: 1px solid #ceedd5;
+    }
+    .res-bad {
+      background-color: #fce8e6;
+      color: #c5221f;
+      border: 1px solid #fad2cf;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-card">
+  <h1>Суммативное оценивание по информатике</h1>
+  <div class="subtitle">7 класс | I четверть (Максимальный балл: 15)</div>
+
+  <div class="info-block">
+    <label for="studentName">Фамилия и имя ученика:</label>
+    <input type="text" id="studentName" placeholder="Введите фамилию и имя">
+  </div>
+
+  <form id="quizForm">
+
+    <!-- Вопрос 1 -->
+    <div class="question">
+      <p>1. С какого символа обязательно должна начинаться любая формула в MS Excel? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> +</label>
+        <label><input type="radio" name="q1" value="b"> =</label>
+        <label><input type="radio" name="q2" value="c"> f(x)</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 2 -->
+    <div class="question">
+      <p>2. Какое базовое понятие электронной таблицы находится на пересечении столбца и строки? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> Ячейка</label>
+        <label><input type="radio" name="q2" value="b"> Вкладка</label>
+        <label><input type="radio" name="q2" value="c"> Диапазон</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 3 -->
+    <div class="question">
+      <p>3. Выберите ДВА корректных обозначения диапазонов ячеек в MS Excel: (Выберите 2 ответа) [1 б.]</p>
+      <div class="options">
+        <label><input type="checkbox" name="q3" value="a"> A1:B10</label>
+        <label><input type="checkbox" name="q3" value="b"> A1-B10</label>
+        <label><input type="checkbox" name="q3" value="c"> C2:C15</label>
+        <label><input type="checkbox" name="q3" value="d"> A1->B10</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 4 -->
+    <div class="question">
+      <p>4. Напишите название встроенной функции Excel, которая используется для вычисления суммы чисел в диапазоне (например, на русском или английском): [1 б.]</p>
+      <input type="text" id="q4" class="text-input" placeholder="Введите название функции">
+    </div>
+
+    <!-- Вопрос 5 -->
+    <div class="question">
+      <p>5. Какая функция используется для нахождения среднего арифметического значений? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> СРЗНАЧ (AVERAGE)</label>
+        <label><input type="radio" name="q5" value="b"> МАКС (MAX)</label>
+        <label><input type="radio" name="q5" value="c"> МИН (MIN)</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 6 -->
+    <div class="question">
+      <p>6. Какое значение будет вычислено в ячейке по формуле `=5+3*2`? (Напишите число) [1 б.]</p>
+      <input type="text" id="q6" class="text-input" placeholder="Введите числовой ответ">
+    </div>
+
+    <!-- Вопрос 7 -->
+    <div class="question">
+      <p>7. Выберите ДВА основных типа данных, с которыми работает MS Excel: (Выберите 2 ответа) [1 б.]</p>
+      <div class="options">
+        <label><input type="checkbox" name="q7" value="a"> Числовой</label>
+        <label><input type="checkbox" name="q7" value="b"> Звуковой</label>
+        <label><input type="checkbox" name="q7" value="c"> Текстовый</label>
+        <label><input type="checkbox" name="q7" value="d"> Видеопоток</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 8 -->
+    <div class="question">
+      <p>8. Какой тип диаграммы лучше всего подходит для наглядного отображения долей или частей целого (например, процентного соотношения)? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> Линейный график</label>
+        <label><input type="radio" name="q8" value="b"> Круговая диаграмма</label>
+        <label><input type="radio" name="q8" value="c"> Точечная диаграмма</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 9 -->
+    <div class="question">
+      <p>9. Что произойдет со стандартной относительной ссылкой на ячейку (например, `A1`) при копировании формулы в соседнюю строку вниз? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> Ссылка изменится на `A2`</label>
+        <label><input type="radio" name="q9" value="b"> Ссылка останется `A1`</label>
+        <label><input type="radio" name="q9" value="c"> Выдаст ошибку `#ЗНАЧ!`</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 10 -->
+    <div class="question">
+      <p>10. Какой специальный символ используется для создания абсолютной (неизменяемой) ссылки на ячейку? (Напишите символ) [1 б.]</p>
+      <input type="text" id="q10" class="text-input" placeholder="Введите символ">
+    </div>
+
+    <!-- Вопрос 11 -->
+    <div class="question">
+      <p>11. Выберите ДВЕ функции, которые служат для поиска наименьшего и наибольшего значения в диапазоне: (Выберите 2 ответа) [1 б.]</p>
+      <div class="options">
+        <label><input type="checkbox" name="q11" value="a"> МИН</label>
+        <label><input type="checkbox" name="q11" value="b"> СЧЁТ</label>
+        <label><input type="checkbox" name="q11" value="c"> МАКС</label>
+        <label><input type="checkbox" name="q11" value="d"> СУММ</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 12 -->
+    <div class="question">
+      <p>12. В ячейках A1=10, A2=20, A3=30. Чему равно значение формулы `=СРЗНАЧ(A1:A3)`? (Напишите число) [1 б.]</p>
+      <input type="text" id="q12" class="text-input" placeholder="Введите числовой ответ">
+    </div>
+
+    <!-- Вопрос 13 -->
+    <div class="question">
+      <p>13. Как обозначаются столбцы в табличном процессоре MS Excel? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> Латинскими буквами (A, B, C...)</label>
+        <label><input type="radio" name="q13" value="b"> Арабскими цифрами (1, 2, 3...)</label>
+        <label><input type="radio" name="q13" value="c"> Римскими цифрами (I, II, III...)</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 14 -->
+    <div class="question">
+      <p>14. Выберите ДВА графических элемента, которые можно настроить и добавить на диаграмму в Excel: (Выберите 2 ответа) [1 б.]</p>
+      <div class="options">
+        <label><input type="checkbox" name="q14" value="a"> Легенда (пояснение условных знаков)</label>
+        <label><input type="checkbox" name="q14" value="b"> Название диаграммы</label>
+        <label><input type="checkbox" name="q14" value="c"> Формула суммы</label>
+        <label><input type="checkbox" name="q14" value="d"> Панель задач Windows</label>
+      </div>
+    </div>
+
+    <!-- Вопрос 15 -->
+    <div class="question">
+      <p>15. Как называются файлы, создаваемые в программе MS Excel? (Один ответ) [1 б.]</p>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> Рабочие книги</label>
+        <label><input type="radio" name="q15" value="b"> Текстовые документы</label>
+        <label><input type="radio" name="q15" value="c"> Презентации</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateScore()">Отправить и проверить работу</button>
+  </form>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function calculateScore() {
+    const name = document.getElementById('studentName').value.trim();
+    if (!name) {
+      alert('Пожалуйста, укажите ваши Фамилию и Имя!');
+      return;
+    }
+
+    let score = 0;
+
+    // В1 (radio: b)
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    if (q1 && q1.value === 'b') score++;
+
+    // В2 (radio: a)
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    if (q2 && q2.value === 'a') score++;
+
+    // В3 (checkbox: a, c)
+    const q3_a = document.querySelector('input[name="q3"][value="a"]').checked;
+    const q3_b = document.querySelector('input[name="q3"][value="b"]').checked;
+    const q3_c = document.querySelector('input[name="q3"][value="c"]').checked;
+    const q3_d = document.querySelector('input[name="q3"][value="d"]').checked;
+    if (q3_a && q3_c && !q3_b && !q3_d) score++;
+
+    // В4 (text: СУММ / SUM / сумм / sum)
+    const q4 = document.getElementById('q4').value.trim().toUpperCase();
+    if (q4 === 'СУММ' || q4 === 'SUM') score++;
+
+    // В5 (radio: a)
+    const q5 = document.querySelector('input[name="q5"]:checked');
+    if (q5 && q5.value === 'a') score++;
+
+    // В6 (text: 11)
+    const q6 = document.getElementById('q6').value.trim();
+    if (q6 === '11') score++;
+
+    // В7 (checkbox: a, c)
+    const q7_a = document.querySelector('input[name="q7"][value="a"]').checked;
+    const q7_b = document.querySelector('input[name="q7"][value="b"]').checked;
+    const q7_c = document.querySelector('input[name="q7"][value="c"]').checked;
+    const q7_d = document.querySelector('input[name="q7"][value="d"]').checked;
+    if (q7_a && q7_c && !q7_b && !q7_d) score++;
+
+    // В8 (radio: b)
+    const q8 = document.querySelector('input[name="q8"]:checked');
+    if (q8 && q8.value === 'b') score++;
+
+    // В9 (radio: a)
+    const q9 = document.querySelector('input[name="q9"]:checked');
+    if (q9 && q9.value === 'a') score++;
+
+    // В10 (text: $)
+    const q10 = document.getElementById('q10').value.trim();
+    if (q10 === '$') score++;
+
+    // В11 (checkbox: a, c)
+    const q11_a = document.querySelector('input[name="q11"][value="a"]').checked;
+    const q11_b = document.querySelector('input[name="q11"][value="b"]').checked;
+    const q11_c = document.querySelector('input[name="q11"][value="c"]').checked;
+    const q11_d = document.querySelector('input[name="q11"][value="d"]').checked;
+    if (q11_a && q11_c && !q11_b && !q11_d) score++;
+
+    // В12 (text: 20)
+    const q12 = document.getElementById('q12').value.trim();
+    if (q12 === '20') score++;
+
+    // В13 (radio: a)
+    const q13 = document.querySelector('input[name="q13"]:checked');
+    if (q13 && q13.value === 'a') score++;
+
+    // В14 (checkbox: a, b)
+    const q14_a = document.querySelector('input[name="q14"][value="a"]').checked;
+    const q14_b = document.querySelector('input[name="q14"][value="b"]').checked;
+    const q14_c = document.querySelector('input[name="q14"][value="c"]').checked;
+    const q14_d = document.querySelector('input[name="q14"][value="d"]').checked;
+    if (q14_a && q14_b && !q14_c && !q14_d) score++;
+
+    // В15 (radio: a)
+    const q15 = document.querySelector('input[name="q15"]:checked');
+    if (q15 && q15.value === 'a') score++;
+
+    // Отображение результатов
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = 'block';
+
+    if (score >= 8) {
+      resultDiv.className = 'res-good';
+      resultDiv.innerHTML = `${name}, ваша работа проверена!<br>Результат: <strong>${score} из 15 баллов</strong>.`;
+    } else {
+      resultDiv.className = 'res-bad';
+      resultDiv.innerHTML = `${name}, ваша работа проверена.<br>Результат: <strong>${score} из 15 баллов</strong>. Повторите материал I четверти!`;
+    }
+  }
+</script>
+
+</body>
+</html>
